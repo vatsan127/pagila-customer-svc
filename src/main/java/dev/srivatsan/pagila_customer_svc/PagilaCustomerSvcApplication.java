@@ -23,7 +23,7 @@ public abstract class PagilaCustomerSvcApplication implements CommandLineRunner 
 
     @Override
     public void run(String... args) throws Exception {
-        Customer customerDetails = customerDetailsSvc.getCustomerDetails(459);
+        Customer customerDetails = customerDetailsSvc.getCustomerDetails(5);
         log.info("Customer Details - {}",customerDetails);
     }
 

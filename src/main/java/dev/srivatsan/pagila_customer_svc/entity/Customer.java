@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table
+@Table(name = "customer")
 @Data
 public class Customer {
     @Id
@@ -14,11 +14,7 @@ public class Customer {
     private String email;
 
     @OneToOne
-    @JoinColumn(name = "store_id", referencedColumnName = "store_id")
-    private Store store;
-
-    @OneToOne
-    @JoinColumn(name = "address_id", referencedColumnName = "address_id")
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
 }

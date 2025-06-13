@@ -1,9 +1,6 @@
 package dev.srivatsan.pagila_customer_svc.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Table
@@ -11,8 +8,9 @@ import lombok.Data;
 @Data
 public class Address {
     @Id
-    @Column(name = "address_id")
-    private int addressId;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "address_seq")
+    @SequenceGenerator(name = "address_seq", sequenceName = "id_address_seq", allocationSize = 25)
+    private int id;
     private String address;
     private String district;
     private String postalCode;
