@@ -1,6 +1,6 @@
 package dev.srivatsan.pagila_customer_svc.controller;
 
-import dev.srivatsan.pagila_customer_svc.api.CustomerAPI;
+import dev.srivatsan.pagila_customer_svc.api.CustomerDetailsAPI;
 import dev.srivatsan.pagila_customer_svc.entity.Customer;
 import dev.srivatsan.pagila_customer_svc.service.CustomerDetailsSvc;
 import org.springframework.http.ResponseEntity;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class CustomerDetailsController  implements CustomerAPI {
+public class CustomerDetailsController  implements CustomerDetailsAPI {
 
     private final CustomerDetailsSvc customerDetailsSvc;
 
