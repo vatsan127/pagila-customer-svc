@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 public class Store {
     @Id
-    @Column(name = "store_id")
+//    @Column(name = "store_id")
     private int storeId;
     private int managerStaffId;
 

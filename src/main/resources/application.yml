@@ -12,7 +12,7 @@ spring:
     name: pagila-customer-svc
     version: v1
   profiles.active: ${SPRING_PROFILES_ACTIVE:postgres}
-  #  banner.location: banner.txt
+  banner.location: banner.txt
   jpa:
     open-in-view: false
     hibernate.ddl-auto: none # create

@@ -1,8 +1,6 @@
 package dev.srivatsan.pagila_customer_svc.entity;
 
 import jakarta.persistence.*;
-import jdk.jfr.Enabled;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Entity
