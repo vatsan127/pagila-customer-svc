@@ -1,0 +1,3 @@
+# Pagila Customer SVC
+
+## Endpoints
