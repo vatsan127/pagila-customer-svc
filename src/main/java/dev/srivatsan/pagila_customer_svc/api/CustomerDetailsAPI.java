@@ -24,7 +24,6 @@ public interface CustomerDetailsAPI {
     )
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Customer found successfully.", content = @Content(mediaType = "application/json", schema = @Schema(implementation = Customer.class))),
-            @ApiResponse(responseCode = "400", description = "Invalid customer ID supplied.", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class))),
             @ApiResponse(responseCode = "404", description = "Customer not found for the given ID.", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class))),
             @ApiResponse(responseCode = "500", description = "Internal server error while processing the request.", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class)))
     })
