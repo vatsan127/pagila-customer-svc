@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.net.URI;
+
 @RestController
 public class CustomerDetailsController implements CustomerDetailsAPI {
 
@@ -26,7 +28,8 @@ public class CustomerDetailsController implements CustomerDetailsAPI {
     @PostMapping("/save")
     public ResponseEntity<Customer> saveCustomer(Customer customer) {
         Customer saved = customerDetailsSvc.saveCustomer(customer);
-        return ResponseEntity.ok(saved);
+        URI location = URI.create("/" + saved.getId());
+        return ResponseEntity.created(location).body(saved);
     }
 
 }
