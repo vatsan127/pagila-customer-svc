@@ -23,4 +23,9 @@ public class CustomerDetailsController  implements CustomerDetailsAPI {
         return ResponseEntity.ok(customerDetails);
     }
 
+    @Override
+    public ResponseEntity<Customer> saveCustomer(Customer customer) {
+        return null;
+    }
+
 }

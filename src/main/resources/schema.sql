@@ -15,7 +15,7 @@ VALUES
 
 -- Customer Table
 INSERT INTO customer
-	(customer_id, first_name, last_name, address_id, email)
+	(id, first_name, last_name, address_id, email)
 values
 	('1', 'MARY', 'SMITH', '5', 'MARY.SMITH@sakilacustomer.org'),
 	('2', 'PATRICIA', 'JOHNSON', '6', 'PATRICIA.JOHNSON@sakilacustomer.org'),
