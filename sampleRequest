@@ -1,0 +1,12 @@
+// Save API
+{
+    "firstName": "srivatsan",
+    "lastName": "n",
+    "email": "srivatsan@mail.org",
+    "address": {
+        "district": "chennai",
+        "address": "tiruvallur",
+        "postalCode": "602001",
+        "phone": "9876543210"
+    }
+}

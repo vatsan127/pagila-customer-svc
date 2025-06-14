@@ -5,11 +5,11 @@ import dev.srivatsan.pagila_customer_svc.entity.Customer;
 import dev.srivatsan.pagila_customer_svc.service.CustomerDetailsSvc;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class CustomerDetailsController  implements CustomerDetailsAPI {
+public class CustomerDetailsController implements CustomerDetailsAPI {
 
     private final CustomerDetailsSvc customerDetailsSvc;
 
@@ -18,14 +18,15 @@ public class CustomerDetailsController  implements CustomerDetailsAPI {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Customer> getCustomerDetailsByID(@PathVariable int id) {
+    public ResponseEntity<Customer> getCustomerDetailsByID(int id) {
         Customer customerDetails = customerDetailsSvc.getCustomerDetails(id);
         return ResponseEntity.ok(customerDetails);
     }
 
-    @Override
+    @PostMapping("/save")
     public ResponseEntity<Customer> saveCustomer(Customer customer) {
-        return null;
+        Customer saved = customerDetailsSvc.saveCustomer(customer);
+        return ResponseEntity.ok(saved);
     }
 
 }

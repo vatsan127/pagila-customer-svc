@@ -1,6 +1,5 @@
 package dev.srivatsan.pagila_customer_svc;
 
-import dev.srivatsan.pagila_customer_svc.entity.Customer;
 import dev.srivatsan.pagila_customer_svc.service.CustomerDetailsSvc;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;

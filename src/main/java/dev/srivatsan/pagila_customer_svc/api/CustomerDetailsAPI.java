@@ -11,6 +11,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Tag(name = "Pagila", description = "Pagila Customer SVC App")
 public interface CustomerDetailsAPI {
@@ -26,7 +28,8 @@ public interface CustomerDetailsAPI {
             @ApiResponse(responseCode = "500", description = "Internal server error while processing the request.", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class)))
     })
     ResponseEntity<Customer> getCustomerDetailsByID(
-            @Parameter(description = "Unique ID of the customer to be fetched", required = true, example = "5") int id
+            @Parameter(description = "Unique ID of the customer to be fetched", required = true, example = "5")
+            @PathVariable int id
     );
 
     @Operation(
@@ -40,7 +43,7 @@ public interface CustomerDetailsAPI {
     })
     ResponseEntity<Customer> saveCustomer(
             @Parameter(description = "Customer object that needs to be created", required = true, schema = @Schema(implementation = Customer.class))
-            @Valid Customer customer
+            @Valid @RequestBody Customer customer
     );
 
 
