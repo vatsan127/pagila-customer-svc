@@ -8,5 +8,15 @@
         "address": "tiruvallur",
         "postalCode": "602001",
         "phone": "9876543210"
-    }
+    },
+    "rental": [
+        {
+            "storeName": "Pagila",
+            "filmName": "Fast And Furious"
+        },
+        {
+            "storeName": "Pagila",
+            "filmName": "Need For Speed"
+        }
+    ]
 }

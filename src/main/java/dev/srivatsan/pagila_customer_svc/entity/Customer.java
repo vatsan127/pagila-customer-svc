@@ -1,6 +1,5 @@
 package dev.srivatsan.pagila_customer_svc.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
@@ -8,6 +7,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 @Table
@@ -35,8 +36,17 @@ public class Customer {
     @NotNull(message = "Address is mandatory")
     @OneToOne(
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE},
-            fetch = FetchType.EAGER
+            fetch = FetchType.EAGER,
+            orphanRemoval = true
     )
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
+
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER,
+            orphanRemoval = true
+    )
+    @JoinColumn(name = "customer_id", referencedColumnName = "id")
+    private List<Rental> rental;
 }

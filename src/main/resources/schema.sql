@@ -27,3 +27,9 @@ values
 	('8', 'SUSAN', 'WILSON', '12', 'SUSAN.WILSON@sakilacustomer.org'),
 	('9', 'MARGARET', 'MOORE', '13', 'MARGARET.MOORE@sakilacustomer.org'),
 	('10', 'DOROTHY', 'TAYLOR', '14', 'DOROTHY.TAYLOR@sakilacustomer.org');
+
+
+INSERT INTO rental
+values
+    (50, 1, 'Fast And Furious', 'Pagila'),
+    (50, 2, 'Need For Speed', 'Pagila');
