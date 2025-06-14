@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @Slf4j
 @SpringBootApplication
-public abstract class PagilaCustomerSvcApplication implements CommandLineRunner {
+public abstract class PagilaCustomerSvcApplication {
 
     private final CustomerDetailsSvc customerDetailsSvc;
 
@@ -18,13 +18,6 @@ public abstract class PagilaCustomerSvcApplication implements CommandLineRunner 
 
     public static void main(String[] args) {
         SpringApplication.run(PagilaCustomerSvcApplication.class, args);
-    }
-
-    @Override
-    public void run(String... args) throws Exception {
-/*        Customer customerDetails = customerDetailsSvc.getCustomerDetails(5);
-        log.info("Customer Details - {}",customerDetails);
-*/
     }
 
 }
