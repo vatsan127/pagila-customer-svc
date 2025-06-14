@@ -5,6 +5,7 @@ import dev.srivatsan.pagila_customer_svc.exception.ErrorResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -42,7 +43,10 @@ public interface CustomerDetailsAPI {
             @ApiResponse(responseCode = "500", description = "Internal server error while creating the customer.", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class)))
     })
     ResponseEntity<Customer> saveCustomer(
-            @Parameter(description = "Customer object that needs to be created", required = true, schema = @Schema(implementation = Customer.class))
+            @Parameter(description = "Customer object that needs to be created",
+                    required = true,
+                    schema = @Schema(implementation = Customer.class)
+            )
             @Valid @RequestBody Customer customer
     );
 

@@ -35,17 +35,13 @@ public class Customer {
     @Valid
     @NotNull(message = "Address is mandatory")
     @OneToOne(
-            cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE},
-            fetch = FetchType.EAGER,
-            orphanRemoval = true
+            cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true
     )
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
     @OneToMany(
-            cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER,
-            orphanRemoval = true
+            cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true
     )
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
     private List<Rental> rental;
