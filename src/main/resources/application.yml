@@ -27,6 +27,13 @@ spring:
 # Postgres properties
 spring:
   config.activate.on-profile: postgres
+#  task:
+#    execution:
+#      thread-name-prefix: "AsyncExecutor-"
+#      pool:
+#        core-size: 2
+#        max-size: 4
+#        queue-capacity: 6
   datasource:
     hikari:
       jdbc-url: jdbc:postgresql://${DB_HOST:localhost}:5432/postgres?currentSchema=public
@@ -37,6 +44,23 @@ spring:
       maximum-pool-size: 10
       minimum-idle: 10
       pool-name: postgres-con
+---
+# Eureka Client Config
+eureka:
+  client:
+    healthcheck.enabled: true
+    registerWithEureka: true       # Register this application as a Eureka client with the Eureka server
+    fetchRegistry: true            # Fetch the registry information from Eureka (needed for service discovery)
+    registry-fetch-interval-seconds: 1
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+
+  instance:
+    #    instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${server.port}}
+    instance-id: ${spring.application.name}:${random.uuid}
+    #prefer-ip-address: true  # (Optional) If true, Eureka will register the IP address instead of hostname
+    lease-renewal-interval-in-seconds: 1  # Frequency (in seconds) at which this client sends heartbeats to Eureka
+    lease-expiration-duration-in-seconds: 2  # How long Eureka will wait without receiving a heartbeat before evicting the instance
 
 ---
 # Application Properties
