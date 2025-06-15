@@ -22,7 +22,6 @@ public class CustomerDetailsSvc {
     }
 
     public Customer saveCustomer(Customer customer) {
-        Customer saved = customerRepo.save(customer);
-        return saved;
+        return customerRepo.save(customer);
     }
 }

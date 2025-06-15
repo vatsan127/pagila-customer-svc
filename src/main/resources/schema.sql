@@ -28,8 +28,9 @@ values
 	('9', 'MARGARET', 'MOORE', '13', 'MARGARET.MOORE@sakilacustomer.org'),
 	('10', 'DOROTHY', 'TAYLOR', '14', 'DOROTHY.TAYLOR@sakilacustomer.org');
 
-
+-- Rental Table
 INSERT INTO rental
+    (customer_id, id, film_name, store_name )
 values
     (50, 1, 'Fast And Furious', 'Pagila'),
     (50, 2, 'Need For Speed', 'Pagila');
